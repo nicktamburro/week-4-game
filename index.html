@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en us">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
 
+
+<h1>Number to Guess:<span id="number-to-guess"></span>
+<h2>Score:<span id="score"></span>
+<h2>Wins:<span id="wins"></span>
+<h2>Losses:<span id="losses"></span>
+<div id="crystal">
+
+<script type="text/javascript">
+
+
+var counter = 0;
+var wins = 0;
+var losses = 0;
+
+var randomNumberToGuess = [Math.floor(Math.random() * 101) + 19];
+//console.log(randomNumberToGuess);
+$("#number-to-guess").text(randomNumberToGuess);
+
+
+
+
+//loops through all numberOptions, makes a crystal and a value for each...
+
+var numberOptions = ["crystal1", "crystal2", "crystal3", "crystal4"];
+
+var crystalImages = []
+
+for (var i = 0; i < numberOptions.length; i++) {
+
+var images = ["assets/images/mind.png", "assets/images/power.png", "assets/images/reality.png", "assets/images/soul.png", "assets/images/space.png", "assets/images/time.png"];
+
+var imageCrystal = $("<img>");
+
+
+//add some CSS for this to do anything...
+	imageCrystal.addClass("crystal");
+
+//trying to make a random image appear from the "images" array...
+//imageCrystal.attr("src", [images = Math.floor((Math.random() * images.length))]);
+
+imageCrystal.attr("src", "assets/images/mind.png");
+
+
+//this gives the crystals a randomly assigned value
+	imageCrystal.attr("data-crystalvalue", [Math.floor(Math.random() * 11) + 1]);
+
+//	imageCrystal.attr[Math.floor(Math.random() * 11) + 1];
+
+//this ACTUALLY adds the crystal images to the page
+	$("#crystal").append(imageCrystal);
+}
+
+//listens for a click...
+$(".crystal").on("click", function() {
+
+// (this) means "the crystal that you clicked", and the rest pulls the value out of the crystal
+	var crystalValue = ($(this).attr("data-crystalvalue"));
+	// and this makes it into an integer, but why 
+	//wasn't it already an integer?
+	crystalValue = parseInt(crystalValue);
+
+
+
+//what is  += vs. ++??
+	counter += crystalValue;
+	alert("You score is " + counter + "!");
+//OKAY, this is working, but not ADDING the numbers,
+//so I need them to write over the old score each time!
+	$("#score").append(counter);
+
+
+	if (counter === randomNumberToGuess){
+		alert("You win!");
+		wins++;
+		$("#wins").append(wins);
+		
+	}
+
+	else if (counter >= randomNumberToGuess) {
+		alert("You lose!");
+		losses++;
+		$("#losses").append(losses);
+
+//wins & losses is KIND OF working...
+
+//then at the end, need to reset score to 0...
+	}
+
+
+});
+ 
+
+//good, okay tonight look through and make sense of this, watch the video demo again, and change what needs to change.  I think the target Number has to be random, and would be cool to find a way to randomize the crystal images, too.
+
+
+
+
+</script>
+
+</body>
+</html>
