@@ -1,0 +1,35 @@
+.jumbotron {
+
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: top;
+	height: 50%;
+	padding-bottom: 0;
+}
+
+#panel2 {
+	width: 50%;
+	margin-left: 25% ;
+	background-color: black;
+	color: Grey;
+	border: none;
+	margin-top: 1%;
+}
+
+h1, h2, h3 {
+	font-family: 'Metal Mania', cursive;
+}
+
+
+
+body {
+	background-image: url("../images/infinity.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: center;
+}
+
+#crystal {
+
+}
