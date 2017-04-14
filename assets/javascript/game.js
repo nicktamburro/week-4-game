@@ -34,7 +34,7 @@ function initialize(){
 
 	for (var i = 0; i < numberOptions.length; i++) {
 
-		var images = ["assets/images/mind.png", "assets/images/power.PNG", "assets/images/reality.PNG", "assets/images/soul.PNG", "assets/images/space.PNG", "assets/images/time.PNG"];
+		var images = ["assets/images/mind.png", "assets/images/power.png", "assets/images/reality.png", "assets/images/soul.png", "assets/images/space.png", "assets/images/time.png"];
 
 		var imageCrystal = $("<img>");
 	
