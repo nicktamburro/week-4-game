@@ -107,6 +107,7 @@ $('body').on("click",".crystal", function() {
 		reset();
 	    $("#crystal").empty();
 		counter = 0;
+		$("#score").html("<img class='shatter'src='assets/images/shattered.png'>");
 		initialize();
 // this KIND OF works to start over...- counter = 0;
 
